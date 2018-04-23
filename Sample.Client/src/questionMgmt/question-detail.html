@@ -1,0 +1,40 @@
+﻿<template>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Question Detail</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form" class="form-horizontal" validate.bind="vCtrl" submit.delegate="save()">
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="name" placeholder="name" class="form-control" value.bind="question.name & validate" blur.trigger="checkModified()">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="questionType" class="col-sm-2 control-label">Type</label>
+                    <div class="col-sm-10">
+                        <select id="questionType" placeholder="type" class="form-control" value.bind="selectedType" change.trigger="typeSelChanged()">
+                            <option repeat.for="item of questionTypesList" model.bind="item">${item.ObjectTypeName}   (${item.Type})</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="col-sm-2 control-label">Question Text</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="description" placeholder="descr" class="form-control" value.bind="question.desc & validate" blur.trigger="checkModified()">
+                    </div>
+                </div>
+
+                <div class="button-bar">
+                    <!--<button class="btn btn-success" click.delegate="save()" disabled.bind="!canSave">Save</button>-->
+                    <input type="submit" class="btn btn-success" disabled.bind="!canSave" value="Save" />
+                    <button class="btn btn-primary" click.delegate="duplicate()" disabled.bind="!canDeleteOrClone">Clone</button>
+                    <button class="btn btn-danger" click.delegate="delete()" disabled.bind="!canDeleteOrClone">Delete</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</template>

@@ -1,0 +1,27 @@
+{
+  "adapters": [
+    {
+      "name": "client",
+      "proxies": [
+        {
+          "queueName": "testCommands",
+          "hostName": "localhost",
+          "message": "Command",
+          "isSender": true
+        },
+        {
+          "queueName": "testResponses",
+          "hostName": "localhost",
+          "message": "Response",
+          "isSender": false
+        },
+        {
+          "queueName": "testNotifications",
+          "hostName": "localhost",
+          "message": "Notification",
+          "isSender": false
+        }
+      ]
+    }
+  ]
+}

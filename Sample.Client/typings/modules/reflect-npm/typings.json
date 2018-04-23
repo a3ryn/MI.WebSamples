@@ -1,0 +1,12 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "C:\\DEV\\TypeScript\\imVision.SMClient.v2\\SMClient\\node_modules\\reflect-metadata\\package.json",
+    "raw": "npm:reflect-metadata",
+    "main": "Reflect.js",
+    "typings": "typings.d.ts",
+    "version": "0.1.8",
+    "global": false,
+    "name": "reflect-metadata"
+  }
+}
