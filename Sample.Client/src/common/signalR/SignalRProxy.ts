@@ -1,4 +1,9 @@
-﻿import { IReceivedMessagesCache, ReceivedMessagesCache} from './ReceivedMsgCache';
+﻿/*
+This source file is under MIT License (MIT)
+Copyright (c) 2016 Mihaela Iridon
+https://opensource.org/licenses/MIT
+*/
+import { IReceivedMessagesCache, ReceivedMessagesCache } from './ReceivedMsgCache';
 import { IMessage } from '../types/messaging/MessageBaseTypes';
 
 export abstract class SignalRProxyBase {

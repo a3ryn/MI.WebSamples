@@ -1,4 +1,9 @@
-﻿import { SignalRProxy } from '../SignalRProxy';
+﻿/*
+This source file is under MIT License (MIT)
+Copyright (c) 2016 Mihaela Iridon
+https://opensource.org/licenses/MIT
+*/
+import { SignalRProxy } from '../SignalRProxy';
 import { SimpleServiceHub } from './ProxyDelegatesProvider';
 
 export class SimpleClientMessaging extends SignalRProxy<string> {

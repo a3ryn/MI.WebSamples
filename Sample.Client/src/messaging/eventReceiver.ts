@@ -1,4 +1,9 @@
-﻿import { EventClientBase } from './signalRTypes/eventReceiverVMBase';
+﻿/*
+This source file is under MIT License (MIT)
+Copyright (c) 2016 Mihaela Iridon
+https://opensource.org/licenses/MIT
+*/
+import { EventClientBase } from './signalRTypes/eventReceiverVMBase';
 import * as msg from '../common/types/messaging/MessageBaseTypes';
 import MapUtils from '../common/util/MapUtils';
 import { deserializationDelegates } from '../common/types/messaging/DeserializationDelegates';

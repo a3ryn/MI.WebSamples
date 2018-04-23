@@ -1,4 +1,9 @@
-﻿import { SimpleClientMessaging } from '../../common/signalR/specializedProxies/simpleMessagingProxy';
+﻿/*
+This source file is under MIT License (MIT)
+Copyright (c) 2016 Mihaela Iridon
+https://opensource.org/licenses/MIT
+*/
+import { SimpleClientMessaging } from '../../common/signalR/specializedProxies/simpleMessagingProxy';
 import { VMClientBase } from '../../common/signalR/SignalRClientBase';
 import { SimpleServiceHub } from '../../common/signalR/specializedProxies/ProxyDelegatesProvider';
 

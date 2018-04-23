@@ -1,5 +1,10 @@
-﻿import { SimpleMessageClientBase } from './signalRTypes/clSignalRVMBase';
-//import { SimpleServiceHub } from '../common/signalR/signalRConfig';
+﻿/*
+This source file is under MIT License (MIT)
+Copyright (c) 2016 Mihaela Iridon
+https://opensource.org/licenses/MIT
+*/
+import { SimpleMessageClientBase } from './signalRTypes/clSignalRVMBase';
+
 
 //the VM
 export class SimpleMessagingClient extends SimpleMessageClientBase {
