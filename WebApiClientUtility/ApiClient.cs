@@ -19,33 +19,26 @@ namespace WebApiClientUtility
     {
         internal enum Env
         {
-            SMpass,
-            SMhash,
+            Pass,
+            Hash,
             BasicAuth,
             SMhashTest,
-            SMfail
+            Fail
         }
 
         internal TestData(string userName, string password)//, string apiBaseUri, string apiGetDataPath)
         {
             UserName = userName;
             Password = password;
-            //ApiBaseUri = apiBaseUri;
-            //ApiGetDataPath = apiGetDataPath;
         }
 
         internal string UserName { get; set; }
         internal string Password { get; set; }
-        //internal string ApiBaseUri { get; set; }
-        //internal string ApiGetDataPath { get; set; }
 
         private static readonly Dictionary<Env, TestData> data = new Dictionary<Env, TestData>
         {
-            { Env.SMhash, new TestData("admin", "007301330071001540F909DD00FC089D207F0E3F30760077")},//, "http://localhost:31053", "/api/modules/8329") }, //with clear password (actual hash)
-            { Env.SMpass, new TestData("admin", "007301330071001540F909DD00FC089D207F0E3F30760077")},//, "http://localhost:31053", "/api/rooms/5223/assets") },//get assets, with clear password (actual hash)
-            { Env.BasicAuth, new TestData("test@abc.com", "abC123!")},//, "http://localhost:15714", "/api/values") }, //do not use; this one requires an external solution to be run; was used for testing only
-            { Env.SMhashTest, new TestData("miTest", "test123!")},//, "http://localhost:31053", "/api/modules/8329") }, //do not use; this was used to register a new user first
-            { Env.SMfail, new TestData("nonexistentUSR", "bla")},//, "http://localhost:31053", "/api/modules/8329") }, //should fail authorization as this user does not exist in SMUserDetail
+            { Env.Hash, new TestData("admin", "007301330071001540F909DD00FC089D207F0E3F30760077")}, //with clear password (actual hash)
+            { Env.Fail, new TestData("nonexistentUSR", "bla")}, //should fail authorization as this user does not exist (not a registered user)
         };
 
         internal static TestData Get(Env env)
@@ -99,7 +92,7 @@ namespace WebApiClientUtility
 
         private static string GetToken()
         {
-            var env = TestData.Env.SMpass;
+            var env = TestData.Env.Pass;
             var data = TestData.Get(env);
 
             //var reg = Register(data.UserName, data.Password, data.ApiBaseUri).Result;

@@ -32,9 +32,6 @@
     <Content Include="index.html" />
     <Content Include="resources\images\favicon.png" />
     <Content Include="resources\styles\styles.css" />
-    <Content Include="..\Sample.Client.Messaging\MessagingConfig.json">
-      <Link>MessagingConfig.json</Link>
-    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -44,16 +41,10 @@
     <Content Include="Scripts\jquery.signalR-2.2.3.min.js" />
     <Content Include="src\app.html" />
     <Content Include="src\messaging\secondSignalR.html" />
-    <Content Include="src\questionMgmt\question-detail.html" />
-    <Content Include="src\questionMgmt\question-list.html" />
-    <Content Include="src\questionMgmt\questionManager.html" />
-    <Content Include="src\questionMgmt\questionModifiedPrompt.html" />
-    <Content Include="src\questionMgmt\no-selection.html" />
     <Content Include="src\common\nav\child-router.html" />
     <Content Include="src\common\nav\nav-bar.html" />
     <Content Include="src\messaging\eventReceiver.html" />
     <Content Include="src\messaging\clSignalR.html" />
-    <Content Include="src\users\users.html" />
     <Content Include="src\welcome\welcome.html" />
     <Content Include="web.config">
       <SubType>Designer</SubType>
@@ -75,20 +66,11 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\messaging\secondSignalR.ts" />
-    <TypeScriptCompile Include="src\questionMgmt\question-detail.ts" />
-    <TypeScriptCompile Include="src\questionMgmt\question-list.ts" />
-    <TypeScriptCompile Include="src\questionMgmt\questionManager.ts" />
-    <TypeScriptCompile Include="src\questionMgmt\questionModifiedPrompt.ts" />
-    <TypeScriptCompile Include="src\questionMgmt\messages.ts" />
-    <TypeScriptCompile Include="src\questionMgmt\no-selection.ts" />
-    <TypeScriptCompile Include="src\common\commands\questionCmdsAndHandlers.ts" />
     <TypeScriptCompile Include="src\common\signalR\SignalRClientBase.ts" />
-    <TypeScriptCompile Include="src\common\requests\questionReqHandler.ts" />
     <TypeScriptCompile Include="src\common\signalR\signalRProxyCache.ts" />
     <TypeScriptCompile Include="src\common\signalR\specializedProxies\eventMessagingProxy.ts" />
     <TypeScriptCompile Include="src\common\signalR\specializedProxies\ProxyDelegatesProvider.ts" />
     <TypeScriptCompile Include="src\common\signalR\specializedProxies\simpleMessagingProxy.ts" />
-    <TypeScriptCompile Include="src\common\types\QuestionType.ts" />
     <TypeScriptCompile Include="src\common\types\messaging\Commands.ts" />
     <TypeScriptCompile Include="src\common\types\messaging\DeserializationDelegates.ts" />
     <TypeScriptCompile Include="src\common\types\messaging\MessagePayloadTypes.ts" />
@@ -106,14 +88,10 @@
     <TypeScriptCompile Include="src\common\signalR\ReceivedMsgCache.ts" />
     <TypeScriptCompile Include="src\messaging\signalRTypes\clSignalRVMBase.ts" />
     <TypeScriptCompile Include="src\messaging\signalRTypes\eventReceiverVMBase.ts" />
-    <TypeScriptCompile Include="src\services\questionsAPIService.ts" />
-    <TypeScriptCompile Include="src\services\questionsData.ts" />
     <TypeScriptCompile Include="src\app.ts" />
-    <TypeScriptCompile Include="src\common\types\Questions.ts" />
     <TypeScriptCompile Include="src\common\types\Resource.ts" />
     <TypeScriptCompile Include="src\common\util\blur-image.ts" />
     <TypeScriptCompile Include="src\common\nav\child-router.ts" />
-    <TypeScriptCompile Include="src\common\CacheBase.ts" />
     <TypeScriptCompile Include="src\common\util\configUtil.ts" />
     <TypeScriptCompile Include="src\common\util\constants.ts" />
     <TypeScriptCompile Include="src\common\converters\converters.ts" />
@@ -124,15 +102,8 @@
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\common\nav\nav-bar.ts" />
     <TypeScriptCompile Include="src\services\navConfigService.ts" />
-    <TypeScriptCompile Include="src\users\users.ts" />
     <TypeScriptCompile Include="src\welcome\welcome.ts" />
     <TypeScriptCompile Include="typings\aurelia-fetch-client-fix.d.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Sample.Client.Messaging\Sample.Client.Messaging.csproj">
-      <Project>{ee50f0a7-a34f-4cfa-b90d-5780e27a012b}</Project>
-      <Name>Sample.Client.Messaging</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -193,6 +164,15 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sample.Client.Messaging\Sample.Client.Messaging.csproj">
+      <Project>{ee50f0a7-a34f-4cfa-b90d-5780e27a012b}</Project>
+      <Name>Sample.Client.Messaging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\common\requests\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>

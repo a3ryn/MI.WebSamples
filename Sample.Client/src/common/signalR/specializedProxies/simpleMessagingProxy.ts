@@ -15,7 +15,8 @@ export class SimpleClientMessaging extends SignalRProxy<string> {
         //client handling incoming "send" notification from server:
         this.msgHub.client.send = this.msgHandler;
         this.msgHub.client.started = this.msgListenerStarted;
-        this.startedDel = this.msgListenerStarted;
+		this.startedDel = this.msgListenerStarted;
+		this.disconnectedDel = this.msgListenerDisconnected;
         //others if needed
     }
 
@@ -24,5 +25,9 @@ export class SimpleClientMessaging extends SignalRProxy<string> {
 
     msgListenerStarted = () => {
         console.log('^^^^^^^^^^^^^^^^^^^^in SimpleClientMessaging.msgListenerStarted()')
-    }
+	}
+	msgListenerDisconnected = () => {
+		console.log('^^^^^^^^^^^^^^^^^^^^in SimpleClientMessaging.msgListenerDisconnected');
+		return false;
+	}
 }

@@ -6,6 +6,8 @@ export const greeting = "Cheers!";
 export const viewPath = ""; //"/dist/views/"; //"/src/views/"; //"/dist/src/views/"; //
 export const Inject_QuestionsCacheId = "QuestionsCache";
 export const ApiRoot = "http://localhost:48401/"; // "http://localhost/SignalRNavApi2/"; //
+export const SignalRHubBaseUrls = ["http://localhost:48400/", "http://localhost/SignalRNavApi2/"];
+export const SignalRHubPath = "dist/src/signalr";
 
 export const viewRouteMap = new Map([ //VM class name to view name
     ['Users', 'users/users'],

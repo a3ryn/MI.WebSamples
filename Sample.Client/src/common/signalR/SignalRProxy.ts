@@ -8,7 +8,8 @@ import { IMessage } from '../types/messaging/MessageBaseTypes';
 
 export abstract class SignalRProxyBase {
     protected constructor(name: string) {
-        this.proxyName = name;
+		this.proxyName = name;
+		console.log("SignalRProxyBase.CTOR");
     }
 
     public abstract setHandlers: () => void;

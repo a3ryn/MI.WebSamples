@@ -1,13 +1,10 @@
-import { configureGlobalCaches } from './common/util/configUtil';
 import { SignalRInitUtil } from './common/signalR/signalRutil';
 import { ProxyDelegates } from './common/signalR/specializedProxies/ProxyDelegatesProvider';
 import { LogManager } from "aurelia-framework";
 import { ConsoleAppender } from "aurelia-logging-console";
 
 export function configure(aurelia) {
-    configureGlobalCaches(aurelia);
-
-    SignalRInitUtil.initSignalRProxies(new ProxyDelegates()); //signalR; proxies must be configured in signalRUtil.ts (under src/common/signalR folder)
+    SignalRInitUtil.initSignalRProxies(); //signalR; proxies must be configured in signalRUtil.ts (under src/common/signalR folder)
 
     LogManager.addAppender(new ConsoleAppender());
     LogManager.setLevel(LogManager.logLevel.debug);

@@ -1,18 +1,10 @@
-﻿import { QuestionCache } from '../../services/questionsData';
-//import { RouteMapItem } from '../types/RouteMapItem';
-import { /*menuOptionsWithRoutes,*/ routeToModuleMap, Inject_QuestionsCacheId } from './constants';
+﻿import { routeToModuleMap } from './constants';
 import { NavRepository } from '../../services/navConfigService';
 import { RouteMapItem } from '../types/RouteMapItem';
 import { LogManager } from "aurelia-framework";
 
-export var log = LogManager.getLogger('smPrototype');
+export var log = LogManager.getLogger('miPrototype');
 
-
-//functions (configuration utilities)
-export const configureGlobalCaches = (aurelia) => {
-    let cache = new QuestionCache(); //should get this from server via client service call
-    aurelia.use.instance(Inject_QuestionsCacheId, cache); //cached data
-};
 
 export const routeMaps = (navRepo: NavRepository) => {
     var promise = new Promise<Array<any>>((resolve, reject) => {

@@ -28,7 +28,8 @@ namespace Sample.Client
                 var hubConfig = new HubConfiguration
                 {
                     EnableDetailedErrors = true,
-                    EnableJSONP = true
+                    EnableJSONP = true,
+                    Resolver = new DefaultDependencyResolver()
                 };
                 map.RunSignalR(hubConfig);
             });

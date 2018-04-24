@@ -14,16 +14,35 @@ namespace Sample.Client.Messaging
 
     public class SimpleServiceHub : Hub<IMessageClient>
     {
+        /// <summary>
+        /// This will be called every time a NEW CLIENT (i.e., Session) is established. Multiple channels opened from within the same SPA will not trigger this.
+        /// </summary>
+        /// <returns></returns>
         public override Task OnConnected()
         {
-            Debug.WriteLine($"SimpleServiceHub.OnConnected(): {Context.ConnectionId}");
+            Debug.WriteLine($"*********************************SimpleServiceHub.OnConnected(): {Context.ConnectionId}");
+            if (string.IsNullOrEmpty(UrlFrag))
+            {
+                var url = Context.Request.Url;
+                UrlFrag = $"{url.Host}:{url.Port}";
+            }
+            HubManager.Instance.AddHub(this);
             return base.OnConnected();
         }
+
+        internal string UrlFrag { get; private set; } = string.Empty;
+
         public void Send(string message)
         {
             //Debug.WriteLine($"Sending message (in SRV): {message}");
             // Call the broadcastMessage method to update clients.
-            Clients.All.Send(message);
+            if (string.IsNullOrEmpty(UrlFrag))
+            {
+                var url = Context.Request.Url;
+                UrlFrag = $"{url.Host}:{url.Port}";
+            }
+
+            Clients.All.Send($"[{UrlFrag}] Server says: {message}");
         }
     }
     #endregion

@@ -15,6 +15,13 @@ namespace Sample.Client
             //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             //RouteConfig.RegisterRoutes(RouteTable.Routes);
             //BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            Messaging.HubManager.Instance.Start();
+        }
+
+        protected void Application_End()
+        {
+            Messaging.HubManager.Instance.Stop();
         }
     }
 }
